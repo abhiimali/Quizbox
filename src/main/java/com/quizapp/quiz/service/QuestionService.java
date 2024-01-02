@@ -33,4 +33,10 @@ public class QuestionService {
          questionDao.save(question);
          return "Question Added";
     }
+
+    public String deleteQuestionById(Integer id) {
+        questionDao.deleteById(id);
+        return "successfully deleted question with id" + id;
+
+    }
 }
