@@ -25,4 +25,12 @@ public class QuestionService {
         return new ResponseEntity<>(new ArrayList<>(), HttpStatus.BAD_REQUEST);
     }
 
+    public List<Question> getQuestionByCategory(String category) {
+        return questionDao.findByCategory(category);
+    }
+
+    public String addQuestion(Question question) {
+         questionDao.save(question);
+         return "Question Added";
+    }
 }
